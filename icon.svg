@@ -1,0 +1,20 @@
+<svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="8" y="16" width="112" height="96" rx="8" fill="#4CAF50" />
+  
+  <!-- Card shadow effect -->
+  <rect x="16" y="24" width="96" height="80" rx="4" fill="#3D9140" />
+  
+  <!-- Main card -->
+  <rect x="24" y="32" width="80" height="64" rx="2" fill="#FFFFFF" />
+  
+  <!-- Question mark -->
+  <text x="64" y="76" font-family="Arial, sans-serif" font-size="40" font-weight="bold" text-anchor="middle" fill="#4CAF50">?</text>
+  
+  <!-- Horizontal line separating the question from potential answer -->
+  <line x1="36" y1="64" x2="92" y2="64" stroke="#E0E0E0" stroke-width="2" />
+  
+  <!-- Small decorative lines representing text -->
+  <line x1="36" y1="50" x2="92" y2="50" stroke="#E0E0E0" stroke-width="2" />
+  <line x1="36" y1="85" x2="74" y2="85" stroke="#E0E0E0" stroke-width="2" />
+</svg>
