@@ -1,8 +1,10 @@
+/* Updated CSS with larger card sizes and improved readability */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    width: 320px;
+    width: 350px; /* Increased width of popup */
     background-color: #f8f9fa;
   }
   
@@ -10,12 +12,19 @@ body {
     padding: 16px;
   }
   
-  h1 {
+  h1, h2 {
     text-align: center;
     color: #333;
     margin-top: 0;
     margin-bottom: 20px;
+  }
+  
+  h1 {
     font-size: 24px;
+  }
+  
+  h2 {
+    font-size: 18px;
   }
   
   .action-button {
@@ -23,8 +32,9 @@ body {
     color: white;
     border: none;
     border-radius: 4px;
-    padding: 10px;
+    padding: 12px; /* Slightly larger padding */
     font-size: 16px;
+    font-weight: bold; /* Added bold text */
     cursor: pointer;
     width: 100%;
     margin-bottom: 12px;
@@ -40,10 +50,28 @@ body {
     color: #333;
     border: 1px solid #ccc;
     border-radius: 4px;
-    padding: 8px;
+    padding: 10px; /* Slightly larger padding */
     font-size: 14px;
     cursor: pointer;
     width: 100%;
+    margin-bottom: 8px;
+  }
+  
+  .small-button {
+    background-color: #f1f1f1;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 12px;
+    cursor: pointer;
+    margin-left: 5px;
+  }
+  
+  .button-row {
+    display: flex;
+    gap: 5px;
+    margin-top: 5px;
   }
   
   .form-group {
@@ -56,13 +84,28 @@ body {
     font-weight: bold;
   }
   
-  textarea {
+  textarea, input, select {
     width: 100%;
-    padding: 8px;
+    padding: 10px; /* Increased padding */
     border: 1px solid #ddd;
     border-radius: 4px;
-    resize: vertical;
     box-sizing: border-box;
+    font-size: 15px; /* Increased font size */
+  }
+  
+  textarea {
+    resize: vertical;
+    min-height: 80px; /* Taller textareas */
+  }
+  
+  .select-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .select-container select {
+    flex-grow: 1;
+    margin-right: 5px;
   }
   
   .hidden {
@@ -72,7 +115,7 @@ body {
   #card-container {
     perspective: 1000px;
     margin: 20px 0;
-    height: 150px;
+    height: 220px; /* Significantly increased card height */
   }
   
   #card {
@@ -90,13 +133,34 @@ body {
     backface-visibility: hidden;
     border-radius: 8px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 15px;
+    padding: 20px; /* More padding */
     box-sizing: border-box;
     overflow-y: auto;
     background-color: white;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15); /* Enhanced shadow */
+  }
+  
+  .card-face p {
+    font-size: 17px; /* Larger text */
+    line-height: 1.4; /* Better line spacing */
+    width: 100%;
+    text-align: center;
+    margin: 0;
+  }
+  
+  .topic-label {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    font-size: 12px; /* Slightly larger */
+    background-color: #e8f5e9;
+    color: #4CAF50;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-weight: bold;
   }
   
   #card-back {
@@ -109,15 +173,17 @@ body {
   
   #status-message {
     text-align: center;
-    margin-top: 10px;
+    margin-top: 12px;
     color: #4CAF50;
     font-weight: bold;
+    min-height: 20px; /* Fixed height to prevent layout shift */
   }
   
   .button-group {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
+    margin-top: 15px;
   }
   
   .button-group button:first-child {
@@ -126,4 +192,48 @@ body {
   
   #back-from-quiz {
     grid-column: 1 / -1;
+  }
+  
+  .quiz-stats {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 14px; /* Slightly larger */
+    color: #666;
+    font-weight: bold;
+  }
+  
+  #topics-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+  }
+  
+  #topics-list li {
+    padding: 10px; /* More padding */
+    margin-bottom: 8px;
+    background-color: white;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px; /* Larger font */
+  }
+  
+  #topics-list .topic-card-count {
+    color: #666;
+    font-size: 13px;
+    font-weight: bold;
+  }
+  
+  #topics-list .topic-actions {
+    display: flex;
+    gap: 5px;
+  }
+  
+  #topics-list .delete-topic {
+    color: #f44336;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
   }

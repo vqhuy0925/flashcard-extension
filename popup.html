@@ -11,10 +11,31 @@
     <div id="main-menu">
       <button id="create-button" class="action-button">Create Question</button>
       <button id="quiz-button" class="action-button">Start Quiz</button>
+      <button id="manage-topics-button" class="secondary-button">Manage Topics</button>
     </div>
     
     <div id="create-section" class="hidden">
       <h2>Create a New Flashcard</h2>
+      <div class="form-group">
+        <label for="topic-select-create">Topic:</label>
+        <div class="select-container">
+          <select id="topic-select-create">
+            <option value="default">General</option>
+            <!-- Topics will be added here dynamically -->
+          </select>
+          <button id="new-topic-button" class="small-button">+</button>
+        </div>
+      </div>
+      <div id="new-topic-form" class="hidden">
+        <div class="form-group">
+          <label for="new-topic-input">New Topic Name:</label>
+          <input type="text" id="new-topic-input">
+          <div class="button-row">
+            <button id="save-topic-button" class="small-button">Save</button>
+            <button id="cancel-topic-button" class="small-button">Cancel</button>
+          </div>
+        </div>
+      </div>
       <div class="form-group">
         <label for="question">Question:</label>
         <textarea id="question" rows="3"></textarea>
@@ -30,9 +51,18 @@
     </div>
     
     <div id="quiz-section" class="hidden">
+      <div class="form-group">
+        <label for="topic-select-quiz">Select Topic:</label>
+        <select id="topic-select-quiz">
+          <option value="all">All Topics</option>
+          <option value="default">General</option>
+          <!-- Topics will be added here dynamically -->
+        </select>
+      </div>
       <div id="card-container">
         <div id="card">
           <div id="card-front" class="card-face">
+            <div class="topic-label" id="card-topic-label"></div>
             <p id="display-question"></p>
           </div>
           <div id="card-back" class="card-face hidden">
@@ -40,10 +70,23 @@
           </div>
         </div>
       </div>
+      <div class="quiz-stats">
+        <span id="card-counter">Card 0 of 0</span>
+      </div>
       <div class="button-group">
         <button id="flip-card" class="action-button">Show Answer</button>
         <button id="next-card" class="action-button">Next Card</button>
         <button id="back-from-quiz" class="secondary-button">Back to Menu</button>
+      </div>
+    </div>
+    
+    <div id="manage-topics-section" class="hidden">
+      <h2>Manage Topics</h2>
+      <ul id="topics-list">
+        <!-- Topics will be listed here -->
+      </ul>
+      <div class="button-group">
+        <button id="back-from-topics" class="secondary-button">Back to Menu</button>
       </div>
     </div>
     
